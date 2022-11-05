@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Generate from "./components/Generate";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [state, setState] = useState({
+    isLongQuote: false,
+    longQuote: "",
+    quote: "",
+    author: "",
+    isSmall: false,
+    small: "",
+    state: false,
+    output: "",
+    clicked: false
+  });
+
+  return <div className="App">{<Generate state={state} />}</div>;
 }
 
 export default App;
