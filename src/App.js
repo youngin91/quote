@@ -12,24 +12,24 @@ function App() {
     small: "",
     state: false,
     output: "",
-    clicked: false,
+    clicked: false
   });
   let show = "hide";
   const os = ["Win", "Mac", "X11", "Linux"];
   for (let i in os) {
-    if (navigator.userAgent.includes(os[i]) ) {
-      show = "show"
-      break
-    }else{
-      show = "hide"
+    if (navigator.userAgent.includes(os[i]) && window.innerWidth > 1150) {
+      show = "show";
+      break;
+    } else {
+      show = "hide";
     }
   }
 
   return (
     <div className="App">
       <div className={`app__cp  ${show}`}>
-        You can copy and paste quotes by pressing <br/> Left-Ctrl + c (to copy) and
-        Left-Ctrl + v (to paste)
+        You can copy and paste quotes by pressing <br /> Left-Ctrl + c (to copy)
+        and Left-Ctrl + v (to paste)
       </div>
       {<Generate state={state} />}
     </div>
