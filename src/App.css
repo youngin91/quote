@@ -1,0 +1,17 @@
+.app__cp{
+  font-size:1.5rem;
+  margin-bottom:3rem;
+  color:rgb(38, 44, 33);
+  display:grid;  
+  place-items:center;
+  justify-items: center;
+  transition:opacity 5s;
+}
+.hide{
+  opacity: 0.0;
+  pointer-events: none
+}
+.show{
+  opacity:1;
+  pointer-events: auto
+}
