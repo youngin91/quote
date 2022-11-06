@@ -1,6 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const cors = require("cors");
+
 const app = express();
 
 const router = express.Router();
@@ -11,10 +12,12 @@ let corsOptions = {
 };
 app.use(cors(corsOptions));
 
-router.get("/", function (req, res) {
-  fetch("https://zenquotes.io/api/random")
+router.get("/", async function  (req, res) {
+ const send =  await fetch("https://zenquotes.io/api/random")
     .then((response) => response.json())
-    .then((data) => res.send(data));
+    .then((data) => data);
+
+    res.send(send);
 });
 
 app.use("/.netlify/functions/api", router);
