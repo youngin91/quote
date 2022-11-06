@@ -15,12 +15,8 @@ app.use(cors(corsOptions));
 
 router.get("/", async function (req, res) {
   const send = await axios.get("https://zenquotes.io/api/random");
-  const response = await send.json().then((data) => data);
 
-  return{
-    status: 200,
-    body: response
-  }
+  res.send(send);
 });
 
 app.use("/.netlify/functions/api", router);
