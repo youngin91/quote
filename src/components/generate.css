@@ -5,7 +5,7 @@
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   max-width:1000px;
   position:relative;
-  bottom:3rem;
+  bottom:7rem;
 }
 .text__icon-twitter {
   font-size: 1.5rem;
@@ -97,5 +97,10 @@
     align-self: center;
     margin-top: 1rem;
   }
+  
+}
+
+@media only screen and (max-width: 500) 
+and (orientation:landscape){
   
 }
