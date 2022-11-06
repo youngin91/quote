@@ -17,7 +17,7 @@ function App() {
   let show = "hide";
   const os = ["Win", "Mac", "X11", "Linux"];
   for (let i in os) {
-    if (navigator.userAgent.includes(os[i]) && window.innerWidth > 1150) {
+    if (navigator.userAgent.includes(os[i]) && window.innerWidth > 1200) {
       show = "show";
       break;
     } else {
