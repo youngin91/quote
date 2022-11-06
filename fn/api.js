@@ -14,7 +14,7 @@ let corsOptions = {
 app.use(cors(corsOptions));
 
 router.get("/", async function (req, res) {
-  const send = await axios.get("https://zenquotes.io/api/random");
+  const send = await axios.get("https://zenquotes.io/api/random").then( (response) => response.data)
 
   res.send(send);
 });
